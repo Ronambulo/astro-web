@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigator from '../../components/Navigator.astro';
+import '../../../public/css/vScroll.css';
+import CardMMiaIZ from '../../components/CardMMiaIZ.astro';
+import CardMMiaDR from '../../components/CardMMiaDR.astro';
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../../../../tac-astro/@/components/ui/drawer.tsx";
+
+---
+
+<Layout title="Teatro Asuncion Cuestablanca">
+	<main>		
+		<Navigator />
+
+              <!-- POP UP Images -->
+      <div class="popUpImage">
+        <span>&times;</span>
+        <img src=""/>
+      </div>
+
+      <!-- Seccion -->
+
+      <section class="seccion">
+        <div class="divSection">
+            <h2 class="tituloSeccion">~ Dirección ~</h2>
+            <div class="divItems">
+                <CardMMiaIZ src='../../../public/sfx/cast/img-00.webp' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+                <CardMMiaDR src='../../../public/sfx/cast/img-01.webp' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+                <CardMMiaIZ src='../../../public/sfx/cast/img-02.webp' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+                <CardMMiaDR src='../../../public/sfx/cast/img-00.webp' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+            </div>
+        </div>    
+        
+	</main>
+</Layout>
+
+<style>
+html, body, main{
+  background-color: #aacedc;
+  overflow-y: scroll;
+}
+
+.tituloSeccion{
+    font-family: Onyx-regular;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  
+  .divSection{
+    padding-top: 17vh;
+    align-self: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  
+  .divItems{
+    max-width: 80%;
+    margin-left: 10%;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 1.75rem;
+  }
+  
+  .popUpImage{
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    z-index: 100;
+  }
+  
+  .popUpImage span{
+    position: absolute;
+    top: 40px; right: 60px;
+    font-size: 40px;
+    font-weight: bolder;
+    color:whitesmoke;
+    cursor: pointer;
+  }
+  
+  .popUpImage img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.item img').forEach(image=>{
+      image.onclick = () =>{
+      console.log(image.getAttribute('src'));
+      document.querySelector('.popUpImage').style.display = 'block';
+      document.querySelector('.popUpImage img').src = image.getAttribute('src');
+      }
+  })
+
+  document.querySelector('.popUpImage').onclick = () =>{
+      document.querySelector('.popUpImage').style.display = 'none';
+  }
+</script>

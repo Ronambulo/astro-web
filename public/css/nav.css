@@ -1,0 +1,193 @@
+ .logo{
+      aspect-ratio: 1;
+      width: 100px;
+  }
+      /* The Overlay (background) */
+  .overlay {
+    display: flex;
+  
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 0; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  
+    align-items: center;
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    /* position: relative; */
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    height: fit-content;
+    /* margin-top: 30px; 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-family: Archivo-regular;
+    font-size: 36px;
+    color: #fdfdfdc2;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    width: 50px;
+    aspect-ratio: 1;
+    /* background-color: #E0E0E0; */
+    
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  div{
+    display: inline;
+  }
+  
+  .seccion{
+    padding-top: 17vh;
+  }
+  
+  /* CSS NORMAL */
+  
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #FBFBFE;
+    width: auto;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  p {
+    color: rgb(85, 85, 85);
+  }
+  
+  /* TRANSITION */
+  
+  a,
+  .btn {
+    transition: all 300ms ease;
+  }
+  
+  /* DESKTOP NAV */
+  
+  nav,
+  .nav-links {
+    display: flex;
+  }
+  
+  nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+    width:100vw;
+  
+  
+    backdrop-filter: blur(10px);
+  
+    
+    body {
+      background-image: url("anemones.jpg");
+    }
+    
+  
+    position: fixed;
+  }
+  
+  .nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+  }
+  
+  a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181, 181, 181);
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .logo:hover {
+    cursor: default;
+  }
+  
+  /* HAMBURGER MENU */
+  
+  @media screen and (min-width: 1200px){
+  #hamburger-nav {
+      display: none;
+  }}
+  
+  .hamburger-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu-links{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 0;
+    overflow: hidden;
+  
+    background-color: rgba(255, 255, 255, 50%);
+  }
+  
+  .menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: right;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    /* border-bottom: 2px solid lightgray; */
+  }
+  
+  .menu-links li {
+    list-style: none;
+  }
+  
+  #boton_hamburguer{
+    z-index: 1;
+  }

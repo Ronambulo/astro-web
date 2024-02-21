@@ -1,0 +1,38 @@
+---
+import '../../public/css/mediaqueries.css';
+import '../../public/css/hamburguers.css';
+import '../../public/css/nav.css';
+---
+
+<nav id="desktop-nav">
+    <img class="logo" src="../../public/sfx/LogoTac.webp" alt="logo" id="logo">
+    <div>
+      <ul class="nav-links">
+        <li><a href="#1">Sobre Nosotros</a></li>
+        <li><a href="/">Programa de Mano</a><li>
+        <li><a href="#4">Informacion de Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <img class="logo" src="../../public/sfx/LogoTac.webp" alt="logo" id="logo">
+    <div class="hamburger-menu">
+      <button class="hamburger hamburger--stand" type="button" id="boton_hamburguer" onclick="toggleMenu()">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- The overlay -->
+  <div id="myNav" class="overlay" onclick="closeNav();toggleMenu()">
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="#1">Sobre Nosotros</a>
+      <a href="/">Programa de Mano</a>
+      <a href="#4">Informacion de Contacto</a>
+    </div>
+  </div>
+
+<script is:inline src="../../public/js/nav.js"></script>

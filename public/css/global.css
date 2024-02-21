@@ -1,0 +1,52 @@
+@font-face { 
+    font-family: Rojal-regular; 
+    src: url('../../public/sfx/fonts/Rojal-Regular.ttf'); 
+  }
+  
+  @font-face { 
+    font-family: Archivo-regular; 
+    src: url('../../public/sfx/Archivo-Regular.ttf'); 
+  }
+  
+  @font-face { 
+    font-family: Onyx-Regular; 
+    src: url('../../public/sfx/Onyx-Regular.ttf'); 
+  }
+
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  img.profile-pic {
+      border-radius: 50%;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  input,
+  textarea,
+  button,
+  select,
+  a {
+      -webkit-tap-highlight-color: transparent;
+  }
