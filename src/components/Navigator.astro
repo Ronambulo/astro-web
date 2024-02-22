@@ -2,37 +2,87 @@
 import '../../public/css/mediaqueries.css';
 import '../../public/css/hamburguers.css';
 import '../../public/css/nav.css';
+
+import '../../public/js/nav.js'
 ---
 
 <nav id="desktop-nav">
-    <img class="logo" src="../../public/sfx/LogoTac.webp" alt="logo" id="logo">
-    <div>
-      <ul class="nav-links">
-        <li><a href="#1">Sobre Nosotros</a></li>
-        <li><a href="/">Programa de Mano</a><li>
-        <li><a href="#4">Informacion de Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <img class="logo" src="../../public/sfx/LogoTac.webp" alt="logo" id="logo">
-    <div class="hamburger-menu">
-      <button class="hamburger hamburger--stand" type="button" id="boton_hamburguer" onclick="toggleMenu()">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- The overlay -->
-  <div id="myNav" class="overlay" onclick="closeNav();toggleMenu()">
-    <!-- Overlay content -->
-    <div class="overlay-content">
-      <a href="#1">Sobre Nosotros</a>
-      <a href="/">Programa de Mano</a>
-      <a href="#4">Informacion de Contacto</a>
-    </div>
+  <a href="/"><img class="logo" src="../../public/sfx/LogoTac.webp" alt="logo" id="logo"></a>
+  <div>
+    <ul class="nav-links">
+      <li><a href="#1">Sobre Nosotros</a></li>
+      <li><a href="/">Programa de Mano</a><li>
+      <li><a href="#4">Informacion de Contacto</a></li>
+    </ul>
   </div>
+</nav>
 
-<script is:inline src="../../public/js/nav.js"></script>
+<nav id="hamburger-nav">
+  <img class="logo" src="../../public/sfx/LogoTac.webp" alt="logo" id="logo">
+  <div class="hamburger-menu">
+    <button class="hamburger hamburger--stand" type="button" id="boton_hamburguer">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+</nav>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#1">Sobre Nosotros</a>
+    <a href="/">Programa de Mano</a>
+    <a href="#4">Informacion de Contacto</a>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.hamburger-menu button').forEach(button=>{
+    button.addEventListener('click', () => {
+    // menu hamburguesa
+    if(document.getElementById("boton_hamburguer").className == "hamburger hamburger--stand") {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger hamburger--stand");
+      document.getElementById("boton_hamburguer").className += " is-active";
+      openNav();
+      // document.getElementById("menu-links").style.maxHeight = "1000px";
+    }else{
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger hamburger--stand");
+      document.getElementById("boton_hamburguer").className = "hamburger hamburger--stand";
+      closeNav();
+      // document.getElementById("menu-links").style.maxHeight = "0";
+    }})
+  })
+
+  document.querySelectorAll('.overlay').forEach(overlay=>{
+    overlay.addEventListener('click', () => {
+    // menu hamburguesa
+    if(document.getElementById("boton_hamburguer").className == "hamburger hamburger--stand") {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger hamburger--stand");
+      document.getElementById("boton_hamburguer").className += " is-active";
+      openNav();
+      // document.getElementById("menu-links").style.maxHeight = "1000px";
+    }else{
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger hamburger--stand");
+      document.getElementById("boton_hamburguer").className = "hamburger hamburger--stand";
+      closeNav();
+      // document.getElementById("menu-links").style.maxHeight = "0";
+    }})
+  })
+
+/* Open */
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+/* Close */
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+  

@@ -9,7 +9,6 @@ import CardMMiaDR from '../../components/CardMMiaDR.astro';
 <Layout title="Teatro Asuncion Cuestablanca">
 	<main>		
 		<Navigator />
-
               <!-- POP UP Images -->
       <div class="popUpImage">
         <span>&times;</span>
@@ -100,14 +99,16 @@ html, body, main{
 
 <script>
   document.querySelectorAll('.item img').forEach(image=>{
-      image.onclick = () =>{
-      console.log(image.getAttribute('src'));
-      document.querySelector('.popUpImage').style.display = 'block';
-      document.querySelector('.popUpImage img').src = image.getAttribute('src');
-      }
+    image.addEventListener('click', () => {
+      const popUpImage = document.querySelector('.popUpImage') as HTMLDivElement;
+      const popUpImageImg = document.querySelector('.popUpImage img') as HTMLImageElement;
+
+      popUpImage.style.display = 'block';
+      popUpImageImg.src = image.getAttribute('src')!;
+      })
   })
 
-  document.querySelector('.popUpImage').onclick = () =>{
-      document.querySelector('.popUpImage').style.display = 'none';
-  }
+  document.querySelector('.popUpImage').addEventListener('click', () => {
+    (document.querySelector('.popUpImage') as HTMLDivElement).style.display = 'none';
+  })
 </script>

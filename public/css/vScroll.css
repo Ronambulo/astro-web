@@ -16,7 +16,7 @@
 html,
 body,
 main {
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
   height: 100%;
 }
@@ -98,7 +98,6 @@ align-items: center;
   background-position-y: bottom;
 
   &.section--mammaMia {
-
     h3{
       font-weight: lighter;
       line-height: normal;
@@ -107,14 +106,12 @@ align-items: center;
       font-style: normal;
       text-align: center;
     }
-
     .divFechas{
       max-height: 94px;
       max-width: 500px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-
       a{
         padding-left: 20px;
         padding-right: 20px;
@@ -123,7 +120,6 @@ align-items: center;
         font-size: 2rem;
       }
     }
-
       background-color: #aacedc;
       background-image: url("/sfx/PDM-BG/MammaMia.png");
     }
