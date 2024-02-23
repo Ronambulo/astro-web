@@ -108,10 +108,11 @@
   }
   
   nav {
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 17vh;
     width:100vw;
+    padding: 0 5rem 0;
   
   
     backdrop-filter: blur(10px);
