@@ -1,0 +1,48 @@
+---
+interface Props{
+    header: string;    
+}
+
+const{header}: Props = Astro.props;
+---
+
+<section class="seccion">
+    <div class="divSection">
+        <h2 class="tituloSeccion">~ {header} ~</h2>
+        <div class="divItems">
+            <slot />
+        </div>
+    </div> 
+</section> 
+
+
+<style>
+  
+.tituloSeccion{
+    font-family: Onyx-regular;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  
+  .divSection{
+    padding-top: 17vh;
+    align-self: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  
+  .divItems{
+    max-width: 80%;
+    margin-left: 10%;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 1.75rem;
+  }
+</style>

@@ -4,9 +4,10 @@ import Navigator from '../../components/Navigator.astro';
 import '../../../public/css/vScroll.css';
 import CardMMiaIZ from '../../components/CardMMiaIZ.astro';
 import CardMMiaDR from '../../components/CardMMiaDR.astro';
+import SeccionCards from '../../components/seccionCards.astro';
 ---
 
-<Layout title="Teatro Asuncion Cuestablanca">
+<Layout title="Elenco 18 de Mayo">
 	<main>		
 		<Navigator />
               <!-- POP UP Images -->
@@ -17,56 +18,23 @@ import CardMMiaDR from '../../components/CardMMiaDR.astro';
 
       <!-- Seccion -->
 
-      <!-- DIRECCION (cambiar de página) -->
-      <section class="seccion">
-        <div class="divSection">
-            <h2 class="tituloSeccion">~ Dirección ~</h2>
-            <div class="divItems">
-                <CardMMiaIZ src='/sfx/cast/img-00.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
-                <CardMMiaDR src='/sfx/cast/img-01.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
-                <CardMMiaIZ src='/sfx/cast/img-02.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
-                <CardMMiaDR src='/sfx/cast/img-00.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
-            </div>
-        </div>    
+      <SeccionCards header="Dirección">      
+        <CardMMiaIZ src='/sfx/cast/img-00.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+        <CardMMiaDR src='/sfx/cast/img-01.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+        <CardMMiaIZ src='/sfx/cast/img-02.png' nombre='Nacho Berrio Jimenez' papel=Escenografía />
+        <CardMMiaDR src='/sfx/cast/img-00.png' nombre='Nacho Berrio Jimenez' papel=Escenografía /> 
+      </SeccionCards>
         
 	</main>
 </Layout>
 
 <style>
-html, body, main{
-  background-color: #aacedc;
-  overflow-y: scroll;
-}
+  html, body, main{
+    background-color: #aacedc;
+    overflow-y: scroll;
+  }
 
-.tituloSeccion{
-    font-family: Onyx-regular;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: center;
-  }
-  
-  .divSection{
-    padding-top: 17vh;
-    align-self: center;
-    justify-content: center;
-    width: 90vw;
-  }
-  
-  .divItems{
-    max-width: 80%;
-    margin-left: 10%;
-    align-self: center;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    column-gap: 1.75rem;
-  }
-  
-  .popUpImage{
+.popUpImage{
     position: fixed;
     top: 0; left: 0;
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity */

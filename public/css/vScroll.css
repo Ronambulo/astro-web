@@ -105,6 +105,8 @@ align-items: center;
       font-family: Onyx-Regular;
       font-style: normal;
       text-align: center;
+
+      cursor: default;
     }
     .divFechas{
       max-height: 94px;
