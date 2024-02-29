@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigator from '../components/Navigator.astro';
+import Instagram from '../../public/svg/ig.astro';
+import Twitter from '../../public/svg/tw.astro';
+---
+
+<Layout title="Sobre Nosotros">
+  <Navigator />
+  <article>
+    <h1>Sobre Nosotros</h1>
+    <div class="ssmm">
+        <Instagram />
+        <Twitter />
+    </div>
+    <div class="Seccion-1">
+        <p class="p1">
+            T.A.C. es un grupo de teatro que nació con vocación 
+            solidaría y cuya finalidad, aparte, por supuesto, de tener la 
+            oportunidad de hacer lo que más nos gusta, es ayudar a los 
+            que más lo necesitan. Por ello ninguna de las más de 40 
+            personas que montamos este espectáculo, entre equipo 
+            técnico y equipo artístico, recibimos compensación 
+            económica ni de ningún otro tipo por las representaciones 
+            que vais a ver. 
+        </p>
+        <!-- <img src="/sfx/galeria/001.JPG" alt="Imagen de una actuación de TAC"> -->
+        <p>
+            En nuestro grupo de teatro tiene cabida todo el mundo, 
+            intentando todos dar lo mejor que tenemos, lo mejor que 
+            sabemos. Por lo tanto, os recordamos que lo que habéis 
+            venido a ver no es un espectáculo profesional, ni de lejos. 
+            Nuestros espectáculos están dirigidos, montados, e 
+            interpretados por personas aficionadas, nuestros técnicos y 
+            nuestros medios también lo son. Por ello, es probable que a 
+            lo largo de la representación pueda haber algún fallo de 
+            sonido o de luces… de lo que no habrá ningún fallo es de 
+            energía, de ganas, de ilusión… y de compromiso con 
+            vosotros para haceros pasar una agradable tarde en nuestra 
+            compañía, porque aunque seamos aficionados tenemos la 
+            mejor familia del mundo…la familia TAC
+        </p>
+
+    </div>
+    </article>
+</Layout>
+
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @media screen and (max-width: 800px){
+        article{
+            padding-top: 17vh;
+        }
+        article{
+            width: 80vw;
+            font-size: 1em;
+        }
+    }
+
+    @media screen and (min-width: 800px){
+        article{
+            padding-top: 25vh;
+        }
+        article{
+            width: 60vw;
+            font-size: 1.3em;
+        }
+    }
+
+    .ssmm{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 55px;
+    }
+
+
+  article{
+    align-self: center;
+    justify-content: center;
+    text-align: justify;
+  }
+
+  h1{
+    font-size: 2.5em;
+  }
+  p{
+    margin-bottom: 1em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .seccion-1{
+    margin-bottom: 2em;
+    display: flex;
+  }
+
+  img{
+    max-width: 500px;
+  }
+</style>
