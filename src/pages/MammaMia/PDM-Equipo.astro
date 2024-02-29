@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigator from '../../components/Navigator.astro';
+import '../../../public/css/vScroll.css';
+import CardMMiaIZ from '../../components/CardMMiaIZ.astro';
+import CardMMiaDR from '../../components/CardMMiaDR.astro';
+import SeccionCards from '../../components/seccionCards.astro';
+---
+
+<Layout title="Equipo y Dirección Mamma Mia">
+	<main>		
+		<Navigator />
+              <!-- POP UP Images -->
+      <div class="popUpImage">
+        <span>&times;</span>
+        <img src=""/>
+      </div>
+
+      <!-- Seccion -->
+
+      <SeccionCards header="Dirección">      
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Nacho Berrio Jimenez'              papel=Escenografía /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Joserra García-Soto'               papel=Musical /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Begoña Zumárraga Dusmet'           papel=Musical />
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Monica Picó'                       papel=Atrezzo /> 
+      </SeccionCards>
+
+      <SeccionCards header="Coreografías">      
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Nacho Berrio Jimenez'              papel=Escenografía /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Joserra García-Soto'               papel=Musical /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Begoña Zumárraga Dusmet'           papel=Musical />
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Monica Picó'                       papel=Atrezzo /> 
+      </SeccionCards>
+        
+	</main>
+</Layout>
+
+<style>
+  html, body, main{
+    background-color: #aacedc;
+    overflow-y: scroll;
+  }
+
+.popUpImage{
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    z-index: 2;
+  }
+  
+  .popUpImage span{
+    position: absolute;
+    top: 40px; right: 60px;
+    font-size: 40px;
+    font-weight: bolder;
+    color:whitesmoke;
+    cursor: pointer;
+  }
+  
+  .popUpImage img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.item img').forEach(image=>{
+    image.addEventListener('click', () => {
+      const popUpImage = document.querySelector('.popUpImage') as HTMLDivElement;
+      const popUpImageImg = document.querySelector('.popUpImage img') as HTMLImageElement;
+
+      popUpImage.style.display = 'block';
+      popUpImageImg.src = image.getAttribute('src')!;
+      })
+  })
+
+  document.querySelector('.popUpImage')?.addEventListener('click', () => {
+    (document.querySelector('.popUpImage') as HTMLDivElement).style.display = 'none';
+  })
+</script>

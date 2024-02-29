@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigator from '../components/Navigator.astro';
+import SVGerror from '../../public/svg/404-svg.astro';
 ---
 
 <Layout title="404 Error">
     <Navigator />
     <div class="spacer">
-        <h1>404 Error</h1>
-        <p>Sorry, the page you are looking for does not exist.</p>
+        <SVGerror/>
+        <p>Lo siento, la página que estas buscando no existe</p>
     </div>
 </Layout>
 
@@ -22,6 +23,7 @@ import Navigator from '../components/Navigator.astro';
         justify-content: center;
         align-items: center;
         height: 100%;
+        zoom: 1.5;
     }
 </style>
 

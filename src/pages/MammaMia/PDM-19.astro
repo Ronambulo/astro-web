@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigator from '../../components/Navigator.astro';
+import '../../../public/css/vScroll.css';
+import CardMMiaIZ from '../../components/CardMMiaIZ.astro';
+import CardMMiaDR from '../../components/CardMMiaDR.astro';
+import SeccionCards from '../../components/seccionCards.astro';
+---
+
+<Layout title="Elenco 19 de Mayo">
+	<main>		
+		<Navigator />
+              <!-- POP UP Images -->
+      <div class="popUpImage">
+        <span>&times;</span>
+        <img src=""/>
+      </div>
+
+      <!-- Seccion -->
+
+      <SeccionCards header="Personajes">      
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Begoña Zumárraga Dusmet'           papel=Donna />
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Susana Muñoz Espinar'              papel=Rosie />
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Isabel Mª Rodríguez Iglesias'                          papel=Tanya />
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Daniela Hernando'                  papel=Sophie /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Jaime Moreno'                      papel=Sky /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Nacho Berrio Jimenez'              papel=Sam /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Joserra García-Soto'               papel=Javi /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Alberto San José Carreras "Bert"'  papel=Bruno /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Andrea B'                          papel=Ali /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Paula García'                      papel=Lisa /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Marta Muñoz'                       papel=Ana /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Alicia Juárez'                     papel=Lara /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Daniel Pablo García'               papel=Chilly /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Marcos García Rodríguez'           papel=Eddie /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Matín Garrido'                     papel=Lucas /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Manu Moreno'                       papel=Tommy /> 
+      </SeccionCards>
+
+      <SeccionCards header="Elenco">      
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Lucía González'                    papel=Elenco />
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Vanessa Marina'                    papel=Elenco />
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Irene Tole'                        papel=Elenco />
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Irene Gómez Arenas'                papel=Elenco /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Sergio Aguado'                     papel=Elenco /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Nacho Alba'                        papel=Elenco /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Antonio Amaya'                     papel=Elenco /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Raquel Merlo Álvarez'              papel=Elenco /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Arantxa García'                    papel=Elenco /> 
+        <CardMMiaDR src='/sfx/cast/img-00.jpg' nombre='Monica Picó'                       papel=Elenco /> 
+        <CardMMiaIZ src='/sfx/cast/img-00.jpg' nombre='Mariah Lehmkuhl'                   papel=Elenco /> 
+      </SeccionCards>
+        
+	</main>
+</Layout>
+
+<style>
+  html, body, main{
+    background-color: #aacedc;
+    overflow-y: scroll;
+  }
+
+.popUpImage{
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    z-index: 2;
+  }
+  
+  .popUpImage span{
+    position: absolute;
+    top: 40px; right: 60px;
+    font-size: 40px;
+    font-weight: bolder;
+    color:whitesmoke;
+    cursor: pointer;
+  }
+  
+  .popUpImage img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.item img').forEach(image=>{
+    image.addEventListener('click', () => {
+      const popUpImage = document.querySelector('.popUpImage') as HTMLDivElement;
+      const popUpImageImg = document.querySelector('.popUpImage img') as HTMLImageElement;
+
+      popUpImage.style.display = 'block';
+      popUpImageImg.src = image.getAttribute('src')!;
+      })
+  })
+
+  document.querySelector('.popUpImage')?.addEventListener('click', () => {
+    (document.querySelector('.popUpImage') as HTMLDivElement).style.display = 'none';
+  })
+</script>
