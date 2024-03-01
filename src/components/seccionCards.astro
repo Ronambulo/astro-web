@@ -40,10 +40,21 @@ const{header}: Props = Astro.props;
     margin-left: 10%;
     align-self: center;
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
     align-content: flex-start;
     flex-wrap: wrap;
     column-gap: 1.75rem;
+  }
+
+  @media screen and (max-width: 1386px){
+    .divItems{
+      justify-content: center;
+    }
+  }
+
+  @media screen and (min-width: 1386px){
+    .divItems{
+      justify-content: flex-start;
+    }
   }
 </style>
