@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigator from '../../components/Navigator.astro';
+import Instagram from '../../../public/svg/ig.astro';
+import Twitter from '../../../public/svg/tw.astro';
+---
+
+<Layout title="Sobre Nosotros">
+  <Navigator />
+  <article>
+    <h1>Sinopsis</h1>
+    <div class="Seccion-1">
+        <p class="p1">
+          Sophie se ha criado junto a su madre, Donna, en una pequeña isla de Grecia sin que esta le hablara nunca de su padre.
+          <br><br>Ahora está a punto de casarse, pero unos días antes de la boda descubre por casualidad un diario de su madre en el que menciona a los tres hombres de los que estuvo enamorada en su juventud y decide invitarlos a la boda con la esperanza de averiguar si alguno de ellos es el padre que no ha conocido y así ir de su brazo al altar. 
+          <br><br>Pero hay un problema, solo tiene un día para hacerlo. Horas antes de la boda de su hija, Donna tendrá que enfrentarse a sus errores del pasado, para ello contará con la inestimable ayuda de sus amigas de toda la vida.
+        </p>
+    </div>
+    </article>
+</Layout>
+
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px;
+        background-color: #aacedc;
+    }
+    @media screen and (max-width: 800px){
+        article{
+            padding-top: 17vh;
+        }
+        article{
+            width: 80vw;
+            font-size: 1em;
+        }
+    }
+
+    @media screen and (min-width: 800px){
+        article{
+            padding-top: 25vh;
+        }
+        article{
+            width: 60vw;
+            font-size: 1.3em;
+        }
+    }
+
+    .ssmm{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 55px;
+    }
+
+
+  article{
+    align-self: center;
+    justify-content: center;
+    text-align: justify;
+  }
+
+  h1{
+    font-size: 2.5em;
+  }
+  p{
+    margin-bottom: 1em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+
+  .seccion-1{
+    display: flex;
+  }
+
+  img{
+    max-width: 500px;
+  }
+</style>

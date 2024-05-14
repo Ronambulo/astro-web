@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigator from '../../components/Navigator.astro';
+import Instagram from '../../../public/svg/ig.astro';
+import Twitter from '../../../public/svg/tw.astro';
+---
+
+<Layout title="Sobre Nosotros">
+  <Navigator />
+  <article>
+    <h1>Agradecimientos</h1>
+    <div class="Seccion-1">
+        <p class="p1">
+            Para hacer un espectáculo como nuestro “Mamma Mia” es necesario mucho trabajo, pero también mucha gente que nos apoye y nos eche una mano.
+            Las gracias más grandes se las tenemos que dar a las Religiosas de la Asunción, en especial a Cristina Ocaña por dejarnos como siempre, pero este año especialmente, que hagamos de su casa, nuestra casa.
+            <br><br>
+            Gracias al equipo directivo, en especial a María Arinero, por apoyarnos, por echarnos una mano y por apostar siempre por el teatro
+            Gracias al A.P.A. por colaborar económicamente con el colegio para que su teatro sea cada vez un poquito mejor y gracias también por su apoyo incondicional a T.A.C.
+            Gracias a G.E.A. por estar siempre a nuestra disposición para todo lo que les pidamos.
+            <br><br>
+            Gracias a Pedro, Leo y Dani por echarnos una mano y estar siempre dispuestos a colaborar con nosotros, y no decirnos nunca que no a nada
+            Gracias al personal de administración, conserjería, limpieza  y servicios del Colegio por dejarnoe cambiar un poquito su día a día y no poner jamás una mala cara
+            <br><br>
+            Gracias a Ricardo por su ayuda con el decorado, que aunque este año haya necesitado hacer un pequeño paréntesis encima del escenario, es y será siempre un “chico TAC”
+            <br><br>
+            Gracias a Tote por diseñarnos nuestro precioso cartel y nuestras entradas
+            <br><br>
+            Gracias a Kike y Bea por echarnos una manita con eso de los coros
+            <br><br>
+            Gracias a Jose y a Laura por los planos de Villa-Donna
+            <br><br>
+            Gracias a Julia por decorar con flores nuestra plaza
+            <br><br>
+            Gracias a Merche por fabricar una vidriera digna de una catedral y a Vero por ponerle color
+            <br><br>
+            Gracias a Maite por ser nuestra sastra de cabecera
+            <br><br>
+            Gracias a Ana por su trabajo y por demostrarnos siempre su cariño y seguir siendo, encima o detrás del escenario, parte de esta familia
+            <br><br>
+            Gracias a todos los profesores porque sentimos su apoyo muy de cerca
+            <br><br>
+            Y sobre todo gracias a vosotros, familiares y amigos , por compartir nuestro sueño
+        </p>
+
+    </div>
+    </article>
+</Layout>
+
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px;
+        background-color: #aacedc;
+    }
+    @media screen and (max-width: 800px){
+        article{
+            padding-top: 17vh;
+        }
+        article{
+            width: 80vw;
+            font-size: 1em;
+        }
+    }
+
+    @media screen and (min-width: 800px){
+        article{
+            padding-top: 25vh;
+        }
+        article{
+            width: 60vw;
+            font-size: 1.3em;
+        }
+    }
+
+    .ssmm{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 55px;
+    }
+
+
+  article{
+    align-self: center;
+    justify-content: center;
+    text-align: justify;
+  }
+
+  h1{
+    font-size: 2.5em;
+  }
+  p{
+    margin-bottom: 1em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+
+  .seccion-1{
+    display: flex;
+  }
+
+  img{
+    max-width: 500px;
+  }
+</style>

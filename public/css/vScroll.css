@@ -32,7 +32,7 @@ main {
 }
 
 .section {
-  scroll-snap-align: start;
+  scroll-snap-align: start;  
 }
 
   
@@ -139,6 +139,7 @@ align-items: center;
       width: 100%;
       min-height:99vh;
       flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 
