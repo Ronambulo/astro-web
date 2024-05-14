@@ -35,6 +35,12 @@ main {
   scroll-snap-align: start;  
 }
 
+a{  
+  /* cursor: pointer; 
+  border-radius: 5px; 
+  border: 2px solid #e7e7e7; */  
+}
+
   
 * {
 box-sizing: border-box;
@@ -108,6 +114,7 @@ align-items: center;
 
       cursor: default;
     }
+    
     .divFechas{
       max-height: 94px;
       max-width: 500px;
