@@ -1,16 +1,19 @@
 @font-face { 
     font-family: Rojal-regular; 
     src: url('../../public/sfx/fonts/Rojal-Regular.ttf'); 
+    font-display: block
   }
   
   @font-face { 
     font-family: Archivo-regular; 
     src: url('../../public/sfx/Archivo-Regular.ttf'); 
+    font-display: block
   }
   
   @font-face { 
     font-family: Onyx-Regular; 
     src: url('../../public/sfx/Onyx-Regular.ttf'); 
+    font-display: block
   }
 
   

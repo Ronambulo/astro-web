@@ -6,11 +6,13 @@
 @font-face { 
   font-family: Archivo-regular; 
   src: url('/sfx/fonts/Archivo-Regular.ttf'); 
+  font-display: block;
 }
 
 @font-face { 
   font-family: Onyx-Regular; 
-  src: url('/sfx/fonts/Onyx-Regular.ttf'); 
+  src: url('/sfx/fonts/Onyx-Regular.ttf');
+  font-display: block; 
 }
 
 html,
