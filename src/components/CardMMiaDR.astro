@@ -14,7 +14,13 @@ const{src,nombre,papel}: Props = Astro.props;
     <p class="NombreVD">{nombre}</p>
   </div>
   <div class="imageHover">
-    <img class="imagenVD" src={src}/>
+    <img 
+      class="imagenVD" 
+      src={src}
+      decoding="async"
+      loading="lazy"
+      alt={`Imagen de ${nombre} en el papel de ${papel}`}
+    />
   </div>
 </div>
 

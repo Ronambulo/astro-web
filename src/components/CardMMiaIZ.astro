@@ -9,7 +9,15 @@ const{src,nombre,papel}: Props = Astro.props;
 ---
 
 <div class="item">
-    <div class="imageHover"><img class="imagenVI" src={src} alt="imagen del actor/actriz"/ id="clickeableImage"></div>
+    <div class="imageHover">
+      <img 
+        class="imagenVI" 
+        src={src} 
+        decoding="async"
+        loading="lazy"
+        alt={`Imagen de ${nombre} en el papel de ${papel}`}
+      >
+    </div>
     <div class="divTextoVI">
       <h3 class="PersonajeVI">{papel}</h3>
       <p class="NombreVI">{nombre}</p>
